@@ -1,8 +1,8 @@
-# Transcluding Angular 2 Components into Angular 1 Directives
+# Transcluding Angular Components into AngularJS Directives
 
-Angular 2 components can be transcluded into Angular 1.x directives.
+Angular components can be transcluded into AngularJS directives.
 
-Here is a very simple Angular 2 component:
+Here is a very simple Angular component:
 
 ```javascript
 import {Component} from '@angular/core';
@@ -13,11 +13,11 @@ import {Component} from '@angular/core';
 })
 export class A2Transclusion {
   message =
-    'I am an Angular 2 Component "transcluded" into Angular 1.x';
+    'I am an Angular Component "transcluded" into AngularJS';
 }
 ```
 
-Here is an Angular 1.x directive that supports transclusion:
+Here is an AngularJS directive that supports transclusion:
 
 ```javascript
 export function a1TransclusionDirective() {
@@ -40,13 +40,13 @@ class A1Transclusion {
 }
 ```
 
-Angular 1.x needs to know about both the component and the directive:
+AngularJS needs to know about both the component and the directive:
 
 ```javascript
 import {A2Transclusion} from './components/a2-transclusion-contents';
 import {a1TransclusionDirective} from './components/a1-transclusion';
 
-// Angular 1 Vendor Import
+// AngularJS Vendor Import
 import * as angular from 'angular';
 
 // Import the upgradeAdapter singleton
@@ -55,7 +55,7 @@ import {upgradeAdapter} from './upgrade-adapter';
 // Name the application
 const APPNAME = 'angular-upgrade-example';
 
-// Register classic Angular 1 modules
+// Register classic AngularJS modules
 angular
   .module(APPNAME)
   .directive('a2TransclusionContents',
@@ -63,7 +63,7 @@ angular
   .directive('a1Transclusion', a1TransclusionDirective);
 ```
 
-Finally, Angular 2 content can be transcluded into Angular 1.x like so:
+Finally, Angular content can be transcluded into AngularJS like so:
 
 ```markup
 <a1-transclude>

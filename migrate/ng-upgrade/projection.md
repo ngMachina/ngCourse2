@@ -1,8 +1,8 @@
-# Projecting Angular 1 Content into Angular 2 Components
+# Projecting AngularJS Content into Angular Components
 
-In Angular 2 the concept of "transclusion" has been replaced by the concept of projection. ng-upgrade provides mechanisms for projecting/transcluding Angular 1.x content into Angular 2 components:
+In Angular the concept of "transclusion" has been replaced by the concept of projection. ng-upgrade provides mechanisms for projecting/transcluding AngularJS content into Angular components:
 
-This is what a simple Angular 2 component that supports projection looks like:
+This is what a simple Angular component that supports projection looks like:
 
 ```javascript
 import {Component, Input} from '@angular/core';
@@ -11,16 +11,16 @@ import {Component, Input} from '@angular/core';
   selector: 'a2-projection',
   template: `
   <p>
-    Angular 2 Outer Component (Top)
+    Angular Outer Component (Top)
     <ng-content></ng-content>
-    Angular 2 Outer Component (Bottom)
+    Angular Outer Component (Bottom)
   </p>
   `
 })
 export class A2Projection { }
 ```
 
-Here's a very simple Angular 1.x directive that will be projected into the Angular 2 component:
+Here's a very simple AngularJS directive that will be projected into the Angular component:
 
 ```javascript
 export function a1ProjectionContentsDirective() {
@@ -35,18 +35,18 @@ export function a1ProjectionContentsDirective() {
 }
 
 class A1ProjectionContents {
-  message = 'I am an Angular 1 Directive "projected" into Angular 2';
+  message = 'I am an AngularJS Directive "projected" into Angular';
 }
 ```
 
-Both the component and the directive must be registered with Angular 1.x:
+Both the component and the directive must be registered with AngularJS:
 
 ```javascript
 import {A2Projection} from './components/a2-projection';
 import {a1ProjectionContentsDirective} from
   './components/a1-projection-contents';
 
-// Angular 1 Vendor Import
+// AngularJS Vendor Import
 import * as angular from 'angular';
 
 // Import the upgradeAdapter singleton
@@ -55,7 +55,7 @@ import {upgradeAdapter} from './upgrade-adapter';
 // Name the application
 const APPNAME = 'angular-upgrade-example';
 
-// Register classic Angular 1 modules
+// Register classic AngularJS modules
 angular
   .module(APPNAME)
   .directive('a2Projection',

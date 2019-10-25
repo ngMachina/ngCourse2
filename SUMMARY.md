@@ -208,7 +208,7 @@
     * [Afterthoughts](testing/redux/after-thoughts.md)
 * [Migrating Angular 1.x Projects to Angular 2](migrate/README.md)
   * [Migration Prep](migrate/migration-prep/README.md)
-    * [Upgrading To Angular 1.3+ Style](migrate/migration-prep/upgrade_to_angular_1_3.md)
+    * [Upgrading To AngularJS 1.3+ Style](migrate/migration-prep/upgrade_to_angular_1_3.md)
     * [Using Webpack](migrate/migration-prep/use_webpack.md)
     * [Migrating To TypeScript](migrate/migration-prep/migrate_to_typescript.md)
   * [Choosing an Upgrade Path](migrate/choose_a_path.md)
