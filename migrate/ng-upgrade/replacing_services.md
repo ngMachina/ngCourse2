@@ -16,7 +16,7 @@ Even services that depend on a limited set of AngularJS services \(e.g. `$http`\
   * Angular's `@Injectable` expects an object it can use `new` with,
 
     similar to how `.service` works \(e.g. `new CalculatorService()`\)
-* Replace constructor functions with TypeScript `class`
+* Replace constructor functions with classes using the `class` keyword.
 * Use the class directly by `export`ing it.
 
 ## Example
@@ -53,14 +53,14 @@ angular.module('calcapp', [])
 ```
 
 ### Conversion to TypeScript class
-
+Also add type information to all methods to make the services safer and easier to use.
 ```javascript
 class CalculatorService {
-  square (a) {
+  square (a: number) {
     return a*a;
   }
 
-  cube (a) {
+  cube (a: number) {
     return a*a*a;
   }
 }
